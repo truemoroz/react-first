@@ -1,8 +1,9 @@
 import React, {Component} from 'react';
 // import ReactDOM from 'react-dom';
 //import { connect } from 'react-redux';
+import {Link, Route, Switch} from 'react-router-dom';
 import {Header, Input, Dropdown, TextArea, Form, Radio, Button} from 'semantic-ui-react';
-import 'semantic-ui-css/semantic.min.css';
+// import 'semantic-ui-css/semantic.min.css';
 import DatePicker from 'react-datepicker';
 import moment from 'moment';
 import 'moment/locale/ru';
@@ -91,7 +92,8 @@ class Step1 extends Component {
                         placeholder='Введите число'
                     />
                 </Form>
-                <Button primary>Продолжить</Button>
+                <Link to='/Step2'><Button primary>Продолжить</Button></Link>
+
             </div>
         );
     }
