@@ -8,7 +8,7 @@ import Step2 from './Step2';
 import Step3 from './Step3';
 import Step4 from './Step4';
 import Test from './Test';
-import {Step, StepGroup} from 'semantic-ui-react';
+import {Step, StepGroup, Segment, Container} from 'semantic-ui-react';
 
 import 'semantic-ui-css/semantic.min.css';
 //import StepGroup from "semantic-ui-react/dist/es/elements/Step/StepGroup";
@@ -17,7 +17,8 @@ import 'semantic-ui-css/semantic.min.css';
 class App extends Component {
     render() {
         return (
-            <div>
+            <Container>
+                <Segment.Group>
                 <nav>
                     <StepGroup>
                         <Step><Link to='/'>Home</Link></Step>
@@ -28,7 +29,9 @@ class App extends Component {
                         {/*<Step><Link to='/Test'>Test</Link></Step>*/}
                     </StepGroup>
                 </nav>
+                </Segment.Group>
 
+                <Segment.Group>
                 <Switch>
                     <Route exact strict path='/' component={Home}/>
                     <Route exact strict path='/Step1' component={Step1}/>
@@ -37,7 +40,8 @@ class App extends Component {
                     <Route exact strict path='/Step4' component={Step4}/>
                     {/*<Route exact strict path='/Test' component={Test}/>*/}
                 </Switch>
-            </div>
+                </Segment.Group>
+            </Container>
         );
     }
 }

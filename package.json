@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "moment": "^2.20.1",
+    "prop-types": "^15.6.1",
     "react": "^16.2.0",
     "react-component-date-picker": "^0.9.10",
     "react-datepicker": "^1.2.1",

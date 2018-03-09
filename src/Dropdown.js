@@ -10,11 +10,11 @@ export default class DropdownSimple extends Component {
             // edit: false,
             // checked: true,
         };
-        this.onChange = this.onChange.bind(this);
+        //this.onChange = this.onChange.bind(this);
     };
 
-    onChange() {
-    }
+    // onChange() {
+    // }
 
 
     render() {
