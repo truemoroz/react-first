@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Header, Input, Dropdown, TextArea, Form, Radio, Button, Checkbox, Tab, Table} from 'semantic-ui-react';
+import {Header, Input, Dropdown, TextArea, Form, Radio, Button, Checkbox, Tab, Table, Segment} from 'semantic-ui-react';
 import TemplateAnswer from './TemplateAnswer';
 import PropTypes from 'prop-types';
 
@@ -11,18 +11,20 @@ class TemplateTab extends Component {
                 {key: 'one', text: 'Одиночный ответ', value: 'one'},
                 {key: 'many', text: 'Множественный ответ', value: 'many'},
                 {key: 'free', text: 'Свободный ответ', value: 'free'},
+                {key: 'link', text: 'Отнести к группе', value: 'link'},
             ],
             answer_type: '',
             template_name: ''
         }
     };
+
     static propTypes = {
         ChangeTemplateName: PropTypes.func,
     };
 
     ChangeTemplateName = (e) => {
         const newValue = e.target.value;
-        this.setState({template_name:newValue});
+        this.setState({template_name: newValue});
         this.props.ChangeTemplateName(newValue);
     };
 
@@ -39,10 +41,10 @@ class TemplateTab extends Component {
     };
 
     render() {
-        return(
+        return (
             <div>
                 <div>Название шаблона</div>
-                <Input placeholder='Новый шаблон' ref="newName" onChange={this.ChangeTemplateName} />
+                <Input placeholder='Новый шаблон' ref="newName" onChange={this.ChangeTemplateName}/>
 
                 <Header as='h2'>Выберите тип шаблона</Header>
                 {/*<DropdownSimple onChange={(e) => this.SelectTypeAnswer(e)} options={this.state.drop_options}>one</DropdownSimple>*/}
@@ -50,7 +52,8 @@ class TemplateTab extends Component {
                           onChange={this.SelectTypeAnswer} placeholder='Выберите'
                           defaultValue={this.state.answer_type}/>
                 {/*{alert(this.state.answer_type)}*/}
-                <TemplateAnswer template_type={this.state.answer_type}/>
+
+                    <TemplateAnswer template_type={this.state.answer_type}/>
 
 
             </div>

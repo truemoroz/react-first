@@ -28,7 +28,7 @@ class Step4 extends Component {
             panes: [
                 // { menuItem: 'Tab 1', pane: { key: 'tab1', content: <TemplateTab/>} },
                 {
-                    menuItem: 'Tab 1',
+                    menuItem: 'Новый шаблон',
                     pane: {key: 'tab1', content: <TemplateTab ChangeTemplateName={this.ChangeTemplateName}/>}
                 },
                 {menuItem: <Button onClick={this.AddPane}>+1</Button>, pane: {key: 'tab2', content: <TemplateTab/>}},
@@ -112,11 +112,8 @@ class Step4 extends Component {
         //this.state.panes.push({menuItem: 'Новый шаблон', render: () => <Tab.Pane>Tab 3 Content</Tab.Pane>});
         //const newPane = { menuItem: 'Tab 1', pane: { key: 'tab3', content: <div>Tab 1 Content</div>} };
         const paneCopy = [...this.state.panes];
-        //this.setState({ panes: [...this.state.panes, newPane] });
-
-        // let newPanes = Object.assign({}, this.state.panes);
         paneCopy.splice(this.state.panes.length - 1, 0, {
-            menuItem: 'Tab 1', pane: {key: 'tab3', content: <TemplateTab ChangeTemplateName={this.ChangeTemplateName}/>}
+            menuItem: 'Новый шаблон', pane: {key: 'tab3', content: <TemplateTab ChangeTemplateName={this.ChangeTemplateName}/>}
         });
         this.setState({panes: paneCopy});
         // // this.panes.push({menuItem: 'Новый шаблон', render: () => <Tab.Pane>Tab 3 Content</Tab.Pane>});
@@ -374,7 +371,7 @@ class Step4 extends Component {
                     </Grid.Row>
                     <Grid.Row>
                         <Grid.Column width={4}>
-                        <Link to='/Step4'><Button primary>Продолжить</Button></Link>
+                            <Link to='/Step4'><Button primary>Продолжить</Button></Link>
                         </Grid.Column>
                     </Grid.Row>
                 </Grid>
